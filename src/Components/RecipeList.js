@@ -11,15 +11,16 @@ export default function RecipeList (props) {
         data
     } = props;
 
-    return(
+    return (
         <div>
             <Table striped bordered hover variant="dark">
                 <tbody>
                     {_.reverse(data).map((recipe, name) => (
-                        <Recipe key={name} onLoadFunction={props.onLoadFunction} name={recipe.name} email={recipe.decription} />
+                        <Recipe key={name} onLoadFunction={props.onLoadFunction} name={recipe.name} description={recipe.description} />
                     ))}
                 </tbody>
             </Table>
         </div>
     )
+
 }

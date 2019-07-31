@@ -34,9 +34,6 @@ export default class NavigationBar extends React.Component {
                             <NavItem>
                                 <NavLink href="./AddRecipe">Add Recipe</NavLink>
                             </NavItem>
-                            <NavItem>
-                                <NavLink href="./Login">Login</NavLink>
-                            </NavItem>
                         </Nav>
                     </Collapse>
                 </Navbar>
