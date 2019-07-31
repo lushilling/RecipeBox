@@ -14,7 +14,6 @@ export default class Post extends Component {
         }
     }
 
-
     postRequest = (e) => {
         e.preventDefault();
 
@@ -23,6 +22,12 @@ export default class Post extends Component {
             description: e.target[1].value,
             ingredients: e.target[2].value,
             image: e.target[3].value
+        }
+
+        if (newRecipe.name === "" || newRecipe.description === "" || newRecipe.ingredients === "" || newRecipe.image === "") {
+            this.setState({ error: "Please fill out all fields correctly" })
+        } else {
+            this.setState({ error: "" })
         }
 
         console.log(newRecipe);
@@ -48,7 +53,7 @@ export default class Post extends Component {
                     <label for="ingredients" id="ingredientsLabel">Ingredients: </label>
                     <input type="content" id="ingredients" class="form-control" />
                     <br />
-                    <label for="image" id="imageLabel">Ingredients: </label>
+                    <label for="image" id="imageLabel">Image Url: </label>
                     <input type="url" id="image" class="form-control" />
                     <br />
                     <p style={{ color: 'red' }}>{this.state.error}</p>
@@ -59,12 +64,3 @@ export default class Post extends Component {
         );
     }
 }
-
-
-
-
-// if (newItem.username === "" || newItem.email === "" || newItem.content === "") {
-//     this.setState({ error: "Please fill out all fields correctly" })
-// } else {
-//     this.setState({ error: "" })
-// }
