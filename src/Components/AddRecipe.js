@@ -1,8 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {
+    Form,
+    FormGroup,
+    Label,
+    Input,
+    FormFeedback,
+    FormText
+} from 'reactstrap';
 import '../App.css';
 import axios from "axios";
 
-export default class Post extends Component {
+export default class Post extends React.Component {
 
     constructor() {
         super();
@@ -60,6 +68,46 @@ export default class Post extends Component {
                     <br />
                     <input type="submit" class="btn btn-primary" value="create post" />
                 </form>
+
+                <Form>
+                    <FormGroup>
+                        <Label for="exampleEmail">Input Recipe Name:</Label>
+                        <Input />
+                        <FormFeedback>You will not be able to see this</FormFeedback>
+                        <FormText>Example help text that remains unchanged.</FormText>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="exampleEmail">Description</Label>
+                        <Input valid />
+                        <FormFeedback valid>Sweet! that name is available</FormFeedback>
+                        <FormText>Example help text that remains unchanged.</FormText>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="examplePassword">Ingredients</Label>
+                        <Input invalid />
+                        <FormFeedback>Oh noes! that name is already taken</FormFeedback>
+                        <FormText>Example help text that remains unchanged.</FormText>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="exampleEmail">Input without validation</Label>
+                        <Input />
+                        <FormFeedback tooltip>You will not be able to see this</FormFeedback>
+                        <FormText>Example help text that remains unchanged.</FormText>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="exampleEmail">Valid input</Label>
+                        <Input valid />
+                        <FormFeedback valid tooltip>Sweet! that name is available</FormFeedback>
+                        <FormText>Example help text that remains unchanged.</FormText>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="examplePassword">Invalid input</Label>
+                        <Input invalid />
+                        <FormFeedback tooltip>Oh noes! that name is already taken</FormFeedback>
+                        <FormText>Example help text that remains unchanged.</FormText>
+                    </FormGroup>
+                </Form>
+
             </div>
         );
     }
