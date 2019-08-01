@@ -1,28 +1,20 @@
 import React from 'react';
 import '../App.css';
-import axios from 'axios';
+import { Link } from "react-router-dom";
 
-export default function Recipe(props) {
+export class Recipe extends React.Component {
+    render(props) {
 
-    let handleClick = () => {
-        let itemToDelete = {
-            name: props.name,
-            desciption: props.desciption
-        }
-
-        axios.delete("http://localhost:5000/recipe/deleterecipe", { data: itemToDelete })
-            .then(res => props.onLoadFunction())
+        return (
+            <tr>
+                <td>
+                    <h4>{props.name}</h4>
+                    <p>{props.description}</p>
+                    <p>{props.ingredients}</p>
+                    <p>{props.image}</p>
+                    <button><Link to={this.props.name}>{this.props.name}</Link></button>
+                </td>
+            </tr>
+        );
     }
-
-    return (
-        <tr>
-            <td>
-                <h4>{props.name}</h4>
-                <p>{props.description}</p>
-                <p>{props.ingredients}</p>
-                <p>{props.image}</p>
-                <button onClick={handleClick}>Delete Recipe</button>
-            </td>
-        </tr>
-    );
 }

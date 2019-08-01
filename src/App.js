@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavigationBar from './Components/NavigationBar';
 import AddRecipe from './Components/AddRecipe';
 import RecipeList from './Components/RecipeList';
+import MoreInfo from './Components/MoreInfo';
+import Recipe from './Components/Recipe';
 
 export default class App extends React.Component {
 
@@ -39,6 +41,16 @@ export default class App extends React.Component {
           <Route exact path="/" render={() => <RecipeList onLoadFunction={this.onload} data={this.state.data} />} />
 
           <Route path="/AddRecipe" component={AddRecipe} render={() => <AddRecipe onLoadFunction={this.onload} data={this.state.data} />} />
+
+          {this.state.data.map((recipe) => (
+
+            <Route path={"/" + recipe.name} render={() => <MoreInfo passedFunction={this.onLoad}
+              name={recipe.name}
+              description={recipe.description}
+              ingredients={recipe.ingredients}
+              image={recipe.image} />} />
+
+          ))}
 
         </Router>
       </div >
