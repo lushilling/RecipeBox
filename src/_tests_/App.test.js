@@ -20,3 +20,10 @@ it('renders routingExample comp', () => {
   const content = <NavigationBar />;
   expect(wrapper.contains(content)).toEqual(true);
 });
+
+//Testing rendering a Prop
+it("render a prop", () => {
+  const wrapper = shallow(<App name="A Name" />);
+  expect(wrapper.instance().props.name).toEqual("A Name");
+  expect(wrapper).toMatchSnapshot();
+});
