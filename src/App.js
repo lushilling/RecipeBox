@@ -19,7 +19,7 @@ export default class App extends React.Component {
   }
 
   onLoad = () => {
-    axios.get("url")
+    axios.get("http://localhost:5000/recipe/all")
       .then(response => {
         this.setState({
           data: response.data
@@ -31,7 +31,7 @@ export default class App extends React.Component {
     return (
       <div >
         <NavigationBar />
-        <RecipeList />
+        <RecipeList onLoadFunction={this.onload} data={this.state.data}/>
       </div >
     )
   }

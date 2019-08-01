@@ -39,7 +39,7 @@ export default class Post extends React.Component {
         }
 
         console.log(newRecipe);
-        axios.post("url", newRecipe)
+        axios.post("http://localhost:5000/recipe/createrecipe", newRecipe)
             .then(response => {
                 this.setState({
                     data: response.data
@@ -69,7 +69,7 @@ export default class Post extends React.Component {
                     <input type="submit" class="btn btn-primary" value="create post" />
                 </form>
 
-                <Form>
+                {/* <Form>
                     <FormGroup>
                         <Label for="exampleEmail">Input Recipe Name:</Label>
                         <Input />
@@ -106,7 +106,7 @@ export default class Post extends React.Component {
                         <FormFeedback tooltip>Oh noes! that name is already taken</FormFeedback>
                         <FormText>Example help text that remains unchanged.</FormText>
                     </FormGroup>
-                </Form>
+                </Form> */}
 
             </div>
         );
