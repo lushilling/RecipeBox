@@ -16,10 +16,6 @@ export default class App extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.onLoad();
-  }
-
   onLoad = () => {
     axios.get("http://localhost:5000/recipe/all")
       .then(response => {
@@ -29,14 +25,21 @@ export default class App extends React.Component {
       })
   }
 
+  componentDidMount() {
+    this.onLoad();
+  }
+
+
   render() {
     return (
       <div >
         <Router>
           <NavigationBar />
-          {/* <RecipeList onLoadFunction={this.onload} data={this.state.data} /> */}
-          <Route path="/" component={RecipeList} onLoadFunction={this.onload} data={this.state.data} />
-          <Route path="/AddRecipe" component={AddRecipe} onLoadFunction={this.onload} data={this.state.data} />
+
+          <Route exact path="/" render={() => <RecipeList onLoadFunction={this.onload} data={this.state.data} />} />
+
+          <Route path="/AddRecipe" component={AddRecipe} render={() => <AddRecipe onLoadFunction={this.onload} data={this.state.data} />} />
+
         </Router>
       </div >
     )

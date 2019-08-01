@@ -1,26 +1,23 @@
 import React from 'react';
-import '../App.css';
-import { Table } from 'reactstrap';
-import _ from 'lodash';
-
+import { Table } from "reactstrap";
 import Recipe from './Recipe';
 
-export default function Thread(props) {
+export default class RecipeList extends React.Component {
 
-    const {
-        data
-    } = props;
+    render() {
+        return (
+            <div>
+                <Table>
+                    <tbody>
+                        <tr>{this.props.data.map((recipe, name) => (
 
-    return (
-        <div>
-            <Table striped bordered hover variant="dark">
-                <tbody>
-                    {_.reverse(data).map((recipe, index) => (
-                        <Recipe key={index} onLoadFunction={props.onLoadFunction} name={recipe.name} email={recipe.description} />
-                    ))}
-                </tbody>
-            </Table>
-        </div>
-    );
+                                 <Recipe key={name} onLoadFunction={this.props.onLoadFunction} name={recipe.name} description={recipe.description} />       
 
+                        ))}</tr>
+                    </tbody>
+                </Table>
+            </div>
+
+        );
+    }
 }
