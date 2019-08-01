@@ -52,6 +52,17 @@ export default class App extends React.Component {
 
           ))}
 
+          {this.state.data.map((recipe) => (
+
+            <Route path={"/" + recipe.name} render={() => <Recipe passedFunction={this.onLoad}
+              name={recipe.name}
+              description={recipe.description}
+              ingredients={recipe.ingredients}
+              image={recipe.image} />} />
+
+          ))}
+
+
         </Router>
       </div >
     )
