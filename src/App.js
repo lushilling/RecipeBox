@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import NavigationBar from './Components/NavigationBar';
+import AddRecipe from './Components/AddRecipe';
 import RecipeList from './Components/RecipeList';
-// import AddRecipe from './Components/AddRecipe';
 
 export default class App extends React.Component {
 
@@ -31,9 +32,12 @@ export default class App extends React.Component {
   render() {
     return (
       <div >
-        <NavigationBar />
-        <RecipeList onLoadFunction={this.onload} data={this.state.data}/>
-        {/* <AddRecipe /> */}
+        <Router>
+          <NavigationBar />
+          {/* <RecipeList onLoadFunction={this.onload} data={this.state.data} /> */}
+          <Route path="/" component={RecipeList} onLoadFunction={this.onload} data={this.state.data} />
+          <Route path="/AddRecipe" component={AddRecipe} onLoadFunction={this.onload} data={this.state.data} />
+        </Router>
       </div >
     )
   }

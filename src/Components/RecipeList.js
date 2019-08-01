@@ -5,7 +5,7 @@ import _ from 'lodash';
 
 import Recipe from './Recipe';
 
-export default function RecipeList(props) {
+export default function Thread(props) {
 
     const {
         data
@@ -15,12 +15,12 @@ export default function RecipeList(props) {
         <div>
             <Table striped bordered hover variant="dark">
                 <tbody>
-                    {_.reverse(data).map((recipe) => (
-                        <tr><td><Recipe onLoadFunction={props.onLoadFunction} name={recipe.name} description={recipe.description} /></td></tr>
+                    {_.reverse(data).map((recipe, index) => (
+                        <Recipe key={index} onLoadFunction={props.onLoadFunction} name={recipe.name} email={recipe.description} />
                     ))}
                 </tbody>
             </Table>
         </div>
-    )
+    );
 
 }
