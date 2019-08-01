@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot AddRecipe 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      for="name"
+      id="nameLabel"
+    >
+      Name: 
+    </label>
+    <input
+      class="form-control"
+      id="name"
+      type="text"
+    />
+    <br />
+    <label
+      for="decription"
+      id="decriptionLabel"
+    >
+      Decription: 
+    </label>
+    <input
+      class="form-control"
+      id="decription"
+      type="text"
+    />
+    <br />
+    <label
+      for="ingredients"
+      id="ingredientsLabel"
+    >
+      Ingredients: 
+    </label>
+    <input
+      class="form-control"
+      id="ingredients"
+      type="text"
+    />
+    <br />
+    <label
+      for="image"
+      id="imageLabel"
+    >
+      Image Url: 
+    </label>
+    <input
+      class="form-control"
+      id="image"
+      type="url"
+    />
+    <br />
+    <p
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+    />
+    <br />
+    <input
+      class="btn btn-primary"
+      type="submit"
+      value="create post"
+    />
+  </form>
+</div>
+`;
