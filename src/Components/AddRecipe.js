@@ -1,12 +1,12 @@
 import React from 'react';
-import {
-    Form,
-    FormGroup,
-    Label,
-    Input,
-    FormFeedback,
-    FormText
-} from 'reactstrap';
+// import {
+//     Form,
+//     FormGroup,
+//     Label,
+//     Input,
+//     FormFeedback,
+//     FormText
+// } from 'reactstrap';
 import '../App.css';
 import axios from "axios";
 
@@ -59,7 +59,7 @@ export default class Post extends React.Component {
                     <input type="text" id="decription" class="form-control" />
                     <br />
                     <label for="ingredients" id="ingredientsLabel">Ingredients: </label>
-                    <input type="content" id="ingredients" class="form-control" />
+                    <input type="text" id="ingredients" class="form-control" />
                     <br />
                     <label for="image" id="imageLabel">Image Url: </label>
                     <input type="url" id="image" class="form-control" />

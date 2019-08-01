@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import NavigationBar from './Components/NavigationBar';
 import RecipeList from './Components/RecipeList';
+// import AddRecipe from './Components/AddRecipe';
 
 export default class App extends React.Component {
 
@@ -32,6 +33,7 @@ export default class App extends React.Component {
       <div >
         <NavigationBar />
         <RecipeList onLoadFunction={this.onload} data={this.state.data}/>
+        {/* <AddRecipe /> */}
       </div >
     )
   }

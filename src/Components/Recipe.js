@@ -6,8 +6,8 @@ export default function Recipe(props) {
 
     let handleClick = () => {
         let itemToDelete = {
-            username: props.username,
-            content: props.content
+            name: props.name,
+            desciption: props.desciption
         }
 
         axios.delete("http://localhost:5000/recipe/deleterecipe", { data: itemToDelete })
@@ -21,7 +21,7 @@ export default function Recipe(props) {
                 <p>{props.description}</p>
                 <p>{props.ingredients}</p>
                 <p>{props.image}</p>
-                <button onClick={handleClick}>Delete Post</button>
+                <button onClick={handleClick}>Delete Recipe</button>
             </td>
         </tr>
     );
