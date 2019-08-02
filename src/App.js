@@ -9,6 +9,7 @@ import RecipeList from './Components/RecipeList';
 import MoreInfo from './Components/MoreInfo';
 import Recipe from './Components/Recipe';
 
+
 export default class App extends React.Component {
 
   constructor(props) {
@@ -42,6 +43,8 @@ export default class App extends React.Component {
 
           <Route path="/AddRecipe" component={AddRecipe} render={() => <AddRecipe onLoadFunction={this.onload} data={this.state.data} />} />
 
+          <Route path="/MoreInfo" component={MoreInfo} render={() => <MoreInfo onLoadFunction={this.onload} data={this.state.data} />} />
+
           {this.state.data.map((recipe) => (
 
             <Route path={"/" + recipe.name} render={() => <MoreInfo passedFunction={this.onLoad}
@@ -51,17 +54,6 @@ export default class App extends React.Component {
               image={recipe.image} />} />
 
           ))}
-
-          {this.state.data.map((recipe) => (
-
-            <Route path={"/" + recipe.name} render={() => <Recipe passedFunction={this.onLoad}
-              name={recipe.name}
-              description={recipe.description}
-              ingredients={recipe.ingredients}
-              image={recipe.image} />} />
-
-          ))}
-
 
         </Router>
       </div >
